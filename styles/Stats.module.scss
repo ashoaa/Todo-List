@@ -1,0 +1,30 @@
+@import "variables";
+@import "global";
+%category {
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.category-main-container {
+  width: 60%;
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+  @media (max-width: 600px) {
+    width: 90%;
+  }
+  .category-container {
+    display: flex;
+    justify-content: space-between;
+
+    @each $color-key, $color-val in $colors {
+      .category-#{$color-key} {
+        @extend %category;
+        color: darken($color-val, 20%);
+      }
+      .selected-#{$color-key} {
+        color: $color-val;
+        border-bottom: 2px solid $color-val;
+      }
+    }
+  }
+}

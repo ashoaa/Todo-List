@@ -1,0 +1,22 @@
+@import "variables";
+@import "global";
+%theme {
+  z-index: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+@each $color-key, $color-val in $colors {
+  @each $theme-val in $theme {
+    .theme-#{$color-key}-#{$theme-val} {
+      @extend %theme;
+      @if ($theme-val== "light") {
+        background-color: mix(#ffffff, $color-val, 80%);
+      } @else {
+        background-color: mix(black, $color-val, 80%);
+      }
+    }
+  }
+}

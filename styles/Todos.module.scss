@@ -1,0 +1,64 @@
+@import "variables";
+@import "global";
+
+%todo {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.75rem;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+%todo-button {
+  background-color: white;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  border: 0;
+  height: 100%;
+  padding: 0.5rem 0.6rem;
+  border-radius: 5px;
+  font-size: 1.3rem;
+}
+
+%todo-done-button {
+  color: white;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  border: 0;
+  height: 100%;
+  padding: 0.5rem 0.6rem;
+  border-radius: 5px;
+  font-size: 1.3rem;
+}
+
+.todo-main-container {
+  width: 60%;
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+  @media (max-width: 600px) {
+    width: 90%;
+  }
+  .todo-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @each $color-key, $color-val in $colors {
+      .todo-#{$color-key} {
+        @extend %todo;
+        background-color: rgba($color-val, 0.85);
+      }
+      .todo-button-#{$color-key} {
+        @extend %todo-button;
+        color: $color-val;
+        border: 2px solid $color-val;
+      }
+      .todo-done-button-#{$color-key} {
+        @extend %todo-done-button;
+        background-color: $color-val;
+        border: 2px solid $color-val;
+      }
+    }
+  }
+}

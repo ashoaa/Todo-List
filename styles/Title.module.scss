@@ -1,0 +1,22 @@
+@import "variables";
+@import "global";
+%h1 {
+  font-size: 4rem;
+  font-family: "Shadows Into Light", cursive;
+}
+.title-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  height: auto;
+  @media (max-width: 600px) {
+    margin: 4.5rem 0 1rem 0;
+  }
+
+  @each $color-key, $color-val in $colors {
+    .h1-#{$color-key} {
+      @extend %h1;
+      color: $color-val;
+    }
+  }
+}

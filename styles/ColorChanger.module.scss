@@ -1,0 +1,57 @@
+@import "variables";
+@import "global";
+%theme-color {
+  padding: 1.4rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+%icon {
+  width: 50px;
+  font-size: 3rem;
+  cursor: pointer;
+}
+.theme-container {
+  display: flex;
+  position: fixed;
+  z-index: 100;
+  right: 1.5rem;
+  top: 5rem;
+  bottom: 5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 600px) {
+    bottom: auto;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    flex-direction: row-reverse;
+  }
+
+  @each $color-key, $color-val in $colors {
+    @each $theme-val in $theme {
+      .theme-icon-#{$theme-val} {
+        @extend %icon;
+        @if ($theme-val== "dark") {
+          color: #ffffff;
+        } @else {
+          color: #000000;
+        }
+      }
+
+      .theme-#{$color-key}-#{$theme-val} {
+        @extend %theme-color;
+        @if ($theme-val== "dark") {
+          border: 5px solid black;
+          outline: 2px solid white;
+        } @else {
+          border: 5px solid white;
+          outline: 2px solid black;
+        }
+        background-color: $color-val;
+      }
+    }
+  }
+}
