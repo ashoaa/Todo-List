@@ -6,7 +6,11 @@ interface props {
 }
 const ThemeWraper = ({ children }: props) => {
   const { color, theme } = useContext(ThemeContext);
-  return <div className={classes[`theme-${color}-${theme}`]}>{children}</div>;
+  return (
+    <div className={classes[`theme-${color}-${theme}`]}>
+      <div className={classes["scroll"]}>{children}</div>
+    </div>
+  );
 };
 
 export default ThemeWraper;
