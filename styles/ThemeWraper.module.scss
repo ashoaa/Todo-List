@@ -7,7 +7,11 @@
   bottom: 0;
   width: 100%;
 }
-
+.scroll {
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+}
 @each $color-key, $color-val in $colors {
   @each $theme-val in $theme {
     .theme-#{$color-key}-#{$theme-val} {
@@ -18,10 +22,5 @@
         background-color: mix(black, $color-val, 80%);
       }
     }
-  }
-  .scroll {
-    overflow-y: scroll;
-    width: 100%;
-    height: 100%;
   }
 }
