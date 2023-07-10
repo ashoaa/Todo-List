@@ -2,11 +2,11 @@ import { useContext } from "react";
 import classes from "../../styles/ColorChanger.module.scss";
 import { ThemeContext } from "../store/todo-contexts";
 const ColorChanger = () => {
-  const { changeColor, changeTheme, theme } = useContext(ThemeContext);
+  const { changeColor, changeTheme, theme, color } = useContext(ThemeContext);
   const toggleTheme = theme === "light" ? "dark" : "light";
   return (
     <>
-      <div className={classes["theme-container"]}>
+      <div className={classes[`theme-container-${color}-${theme}`]}>
         <div
           className={classes[`theme-icon-${theme}`]}
           onClick={() => changeTheme(toggleTheme)}>
