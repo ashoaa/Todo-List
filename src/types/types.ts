@@ -1,5 +1,6 @@
+export const colorNames = ["blue", "orange", "green", "red"] as const;
 export interface contextColor {
-  color: "orange" | "blue" | "green";
+  color: (typeof colorNames)[number];
   changeColor: (inputColor: contextColor["color"]) => void;
   theme: "light" | "dark";
   changeTheme: (inputTheme: contextColor["theme"]) => void;

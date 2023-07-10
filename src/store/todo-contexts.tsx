@@ -5,14 +5,9 @@ interface props {
 }
 
 let initialColor: contextColor["color"] = "orange";
-const localColor = localStorage.getItem("color");
+const localColor = localStorage.getItem("color") as contextColor["color"];
 if (localColor !== null) {
-  if (
-    localColor === "orange" ||
-    localColor === "blue" ||
-    localColor === "green"
-  )
-    initialColor = localColor;
+  initialColor = localColor;
 }
 
 let initialTheme: contextColor["theme"] = "light";
