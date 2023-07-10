@@ -3,6 +3,9 @@
 %h1 {
   font-size: 4rem;
   font-family: "Shadows Into Light", cursive;
+  @media (max-width: 600px) {
+    font-size: 3rem;
+  }
 }
 .title-container {
   display: flex;
