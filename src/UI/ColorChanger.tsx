@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import classes from "../../styles/ColorChanger.module.scss";
 import { ThemeContext } from "../store/todo-contexts";
-import { contextColor, colorNames } from "../types/types";
+import { colorNames } from "../types/types";
 const ColorChanger = () => {
   const { changeColor, changeTheme, theme, color } = useContext(ThemeContext);
   const toggleTheme = theme === "light" ? "dark" : "light";
