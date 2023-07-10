@@ -6,11 +6,20 @@
   height: 20px;
   border-radius: 50%;
   cursor: pointer;
+  @media (max-width: 600px) {
+    width: 5px;
+    height: 5px;
+    padding: 1rem;
+  }
 }
 %icon {
   width: 50px;
   font-size: 3rem;
+  text-align: center;
   cursor: pointer;
+  @media (max-width: 600px) {
+    font-size: 2.5rem;
+  }
 }
 %theme-container {
   display: flex;
