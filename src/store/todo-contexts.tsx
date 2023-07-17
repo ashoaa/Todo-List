@@ -34,6 +34,7 @@ export const DataContext = createContext<contextData>({
   data: initialData,
   render: 0,
   category: "completed",
+  setTodo: () => undefined,
   addTodo: () => undefined,
   deleteTodo: () => undefined,
   doneTodo: () => undefined,
@@ -54,6 +55,12 @@ const ContextWraper = ({ children }: props) => {
   const changeTheme = (theme: contextColor["theme"]) => {
     localStorage.setItem("theme", theme);
     setTheme(theme);
+  };
+
+  const setTodo = (newTodo: todo[]) => {
+    const newData = [...newTodo];
+    localStorage.setItem("data", JSON.stringify(newData));
+    setData(newData);
   };
 
   const addTodo = (newTodo: todo) => {
@@ -85,6 +92,7 @@ const ContextWraper = ({ children }: props) => {
           data,
           render,
           category,
+          setTodo,
           addTodo,
           deleteTodo,
           doneTodo,

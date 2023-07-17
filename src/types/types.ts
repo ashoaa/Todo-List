@@ -15,6 +15,7 @@ export interface contextData {
   data: todo[];
   render: number;
   category: "all" | "completed" | "uncompleted";
+  setTodo: (inputTodo: todo[]) => void;
   addTodo: (inputTodo: todo) => void;
   deleteTodo: (inputTodo: todo["id"]) => void;
   doneTodo: (inputTodo: todo["id"]) => void;
