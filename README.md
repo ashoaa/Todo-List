@@ -1,6 +1,9 @@
 # Todo-List
-Todo list with multiple color themes using TypeScript, Context API, and Sass.
+
+Todo list with multiple color themes using TypeScript, Context API, and Sass. Items are reorderable using Framer Motion.
+
 ## Light mode
+
 <table>
   <tr>
     <td>Desktop view</td>
