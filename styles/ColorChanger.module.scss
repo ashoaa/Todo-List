@@ -44,11 +44,11 @@
 }
 .svg {
   @extend %svg;
-  fill: #ffffff;
+  fill: #000000;
 }
 .svg-light {
   @extend %svg;
-  fill: #000000;
+  fill: #ffffff;
 }
 @each $color-key, $color-val in $colors {
   @each $theme-val in $theme {
