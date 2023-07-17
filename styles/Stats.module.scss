@@ -26,6 +26,7 @@
       .selected-#{$color-key} {
         color: $color-val;
         border-bottom: 2px solid $color-val;
+        transition: color 0.1s ease-out;
       }
     }
   }

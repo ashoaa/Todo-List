@@ -1,5 +1,6 @@
 @import "variables";
 %theme-color {
+  transition: all 0.3s ease-out;
   padding: 1.4rem;
   width: 20px;
   height: 20px;
@@ -30,6 +31,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.3s ease-out;
+
   @media (max-width: 600px) {
     bottom: auto;
     top: 0;
