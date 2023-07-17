@@ -1,4 +1,9 @@
 @import "variables";
+%svg {
+  display: flex;
+  align-items: center;
+  height: 20px;
+}
 %todo {
   width: 100%;
   font-size: 1.2rem;
@@ -13,22 +18,25 @@
   cursor: pointer;
   border: 0;
   height: 100%;
-  padding: 0.5rem 0.6rem;
+  padding: 0.5rem;
   border-radius: 5px;
-  font-size: 1.3rem;
+  transition: all 0.15s ease-out;
 }
 
 %todo-done-button {
-  color: white;
   margin-left: 0.5rem;
   cursor: pointer;
   border: 0;
   height: 100%;
-  padding: 0.5rem 0.6rem;
+  padding: 0.5rem;
   border-radius: 5px;
-  font-size: 1.3rem;
+  transition: all 0.15s ease-out;
 }
 
+.svg-done {
+  @extend %svg;
+  fill: white;
+}
 .todo-main-container {
   width: 60%;
   max-width: 500px;
@@ -56,6 +64,10 @@
         @extend %todo-done-button;
         background-color: $color-val;
         border: 2px solid $color-val;
+      }
+      .svg-#{$color-key} {
+        @extend %svg;
+        fill: $color-val;
       }
     }
   }

@@ -12,13 +12,13 @@
     padding: 1rem;
   }
 }
-%icon {
-  width: 50px;
-  font-size: 3rem;
-  text-align: center;
+%svg {
+  display: flex;
+  align-items: center;
+  height: 55px;
   cursor: pointer;
   @media (max-width: 600px) {
-    font-size: 2.5rem;
+    height: 40px;
   }
 }
 %theme-container {
@@ -42,6 +42,14 @@
     flex-direction: row-reverse;
   }
 }
+.svg {
+  @extend %svg;
+  fill: #ffffff;
+}
+.svg-light {
+  @extend %svg;
+  fill: #000000;
+}
 @each $color-key, $color-val in $colors {
   @each $theme-val in $theme {
     .theme-container-#{$color-key}-#{$theme-val} {
@@ -50,14 +58,6 @@
         background-color: mix(black, $color-val, 80%);
       } @else {
         background-color: mix(#ffffff, $color-val, 80%);
-      }
-      .theme-icon-#{$theme-val} {
-        @extend %icon;
-        @if ($theme-val== "dark") {
-          color: #ffffff;
-        } @else {
-          color: #000000;
-        }
       }
     }
     .theme-#{$color-key}-#{$theme-val} {
