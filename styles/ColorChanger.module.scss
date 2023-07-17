@@ -60,11 +60,9 @@
     .theme-#{$color-key}-#{$theme-val} {
       @extend %theme-color;
       @if ($theme-val== "dark") {
-        border: 5px solid black;
-        outline: 2px solid white;
+        border: 5px solid #ffffff;
       } @else {
-        border: 5px solid white;
-        outline: 2px solid black;
+        border: 5px solid #000000;
       }
       background-color: $color-val;
     }
