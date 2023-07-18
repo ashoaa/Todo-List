@@ -1,6 +1,7 @@
 @import "variables";
 .reorder {
   width: 60%;
+  max-width: 500px;
   margin: 0 auto;
   @media (max-width: 600px) {
     width: 80%;
