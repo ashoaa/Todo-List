@@ -11,6 +11,9 @@
   height: 40px;
   overflow: hidden;
   border-radius: 5px;
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
 }
 %todo-button {
   background-color: white;
