@@ -10,7 +10,7 @@ const TodoItem = ({ Todo }: props) => {
   const { deleteTodo, doneTodo } = useContext(DataContext);
   const { color } = useContext(ThemeContext);
   return (
-    <Reorder.Item as="div" value={Todo}>
+    <Reorder.Item as="div" value={Todo} style={{ width: "auto" }}>
       <div className={classes["todo-main-container"]}>
         <div className={classes["todo-container"]}>
           <div className={classes[`todo-${color}`]}>{Todo.todo}</div>

@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { todo } from "./types/types";
 import { Reorder } from "framer-motion";
 import TodoItem from "./TodoItem";
+import classes from "../styles/Reorder.module.scss";
 
 const Todos = () => {
   const { data, category, setTodo } = useContext(DataContext);
@@ -19,6 +20,7 @@ const Todos = () => {
       <Reorder.Group
         as="div"
         axis="y"
+        className={classes["reorder"]}
         onReorder={setTodo}
         values={filteredData}>
         {filteredData.map((todo: todo) => (

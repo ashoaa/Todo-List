@@ -38,12 +38,8 @@
   fill: white;
 }
 .todo-main-container {
-  width: 60%;
   max-width: 500px;
   margin: 0 auto 2rem auto;
-  @media (max-width: 600px) {
-    width: 90%;
-  }
   .todo-container {
     width: 100%;
     display: flex;
